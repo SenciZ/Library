@@ -1,6 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+
+/* font-family: 'Bebas Neue', cursive;
+font-family: 'Montserrat', sans-serif; */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+}
+
+.topBar{
+    background-color: rgb(3, 27, 94);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newBookBtn{
+    background-color: rgb(241, 255, 43);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: large;
+    color: rgb(3, 27, 94);
+    width: 10rem;
+    height: 2rem;
+    border-radius: 7px;
+    outline: hidden;
+    border: hidden;
+    cursor: pointer;
+    box-shadow: rgb(2, 16, 54) 2px 2px 2px;
+}
+
+.newBookBtn:hover{
+    background-color: rgb(0, 168, 235);
+}
+
+.newBookBtn:focus{
+    outline: none;
+    border: none;
+}
+
+.bookContainer{
+    background-color: rgb(241, 255, 43);
+    height: 90vh;
 }

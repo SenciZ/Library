@@ -21,3 +21,16 @@ function Car(make, model, color, fuel){
 }
 
 const cary = new Car("Ford", "Fusion", "Red", "Electric");
+const toyota = new Car("Toyota","Rav4", "Grey", "Gasoline");
+
+function Student(name, grade){
+    this.name = name
+    this.grade = grade
+
+}
+
+const student1 = new Student("Timmy", 9);
+
+Student.prototype.sayName = function(){
+    console.log(this.name);
+}
