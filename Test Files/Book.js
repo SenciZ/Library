@@ -34,3 +34,6 @@ const student1 = new Student("Timmy", 9);
 Student.prototype.sayName = function(){
     console.log(this.name);
 }
+
+let library = [];
+library.push(hobbit);

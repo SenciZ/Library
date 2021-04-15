@@ -9,10 +9,15 @@ font-family: 'Montserrat', sans-serif; */
     box-sizing: border-box;
     text-decoration: none;
 }
-
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .topBar{
     background-color: rgb(3, 27, 94);
     height: 10vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +47,20 @@ font-family: 'Montserrat', sans-serif; */
 }
 
 .bookContainer{
-    background-color: rgb(241, 255, 43);
-    height: 90vh;
+    background-color: rgb(250, 253, 208);
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.book{
+    border: rgb(3, 27, 94) solid;
+    background-color: rgb(241, 241, 241);
+    margin: 10px 10px;
+    width: 20rem;
+    height: 30rem;
+    border-radius: 10px;
 }
