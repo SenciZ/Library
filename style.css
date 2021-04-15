@@ -10,35 +10,42 @@ font-family: 'Montserrat', sans-serif; */
     text-decoration: none;
 }
 
-.bodyDarken{
-    z-index: 99;
-    background-color: rgb(3, 27, 94);
-    width: 100%;
+body{
+    background-color: rgb(250, 253, 208);
     height: 100%;
-    position: fixed;
 }
 
 .container{
     background-color: rgb(250, 253, 208);
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .topBar{
     background-color: rgb(3, 27, 94);
-    height: 10vh;
     width: 100%;
     display: flex;
+    min-height: 15vh;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+.formBk{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .newBookBtn{
-    background-color: rgb(241, 255, 43);
+    background-color: rgb(5, 41, 88);
     font-family: 'Bebas Neue', sans-serif;
     font-size: large;
-    color: rgb(3, 27, 94);
+    color: rgb(255, 255, 255);
     width: 10rem;
     height: 2rem;
     border-radius: 7px;
@@ -47,6 +54,40 @@ font-family: 'Montserrat', sans-serif; */
     cursor: pointer;
     box-shadow: rgb(2, 16, 54) 2px 2px 2px;
 }
+
+.bookAddingForm{
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+    border: rgb(3, 27, 94) solid;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+label{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 5px;
+}
+
+input{
+    padding: 5px;
+    margin-right: 25px;
+    outline: none;
+    border-radius: 3px;
+    border:rgb(2, 16, 54) solid 1px;
+}
+
+input:focus{
+    border: red solid 1px;
+    border-radius: 2px;
+}
+
+
+
 
 .newBookBtn:hover{
     background-color: rgb(0, 168, 235);
@@ -76,39 +117,3 @@ font-family: 'Montserrat', sans-serif; */
 }
 
 
-.modal{
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    flex-direction: column;
-    border: rgb(3, 27, 94) solid;
-    background-color: rgb(255, 255, 255);
-    margin-top: auto;
-    margin-left: auto;
-    border-radius: 10px;
-    z-index: 100;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    padding: 20px;
-}
-
-.modalHide{
-    visibility: hidden;
-}
-
-label{
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-input{
-    padding: 5px;
-    outline: none;
-    border-radius: 3px;
-    border:rgb(2, 16, 54) solid 1px;
-}
-
-input:focus{
-    border: red solid 1px;
-    border-radius: 2px;
-}

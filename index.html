@@ -9,25 +9,19 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="modal">
-        <h3>Add New Book</h3>
-        <label for="title">Title of Book:</label><input type="text" class="title">
-        <label for="author">Author:</label><input type="text" class="author">
-        <label for="pages">Number of Pages:</label><input type="number" name="pages" id="pages" class="pages">
-        <label for="status">Have you read it?</label><input type="radio" name="status" id="status">
-    </div>
-    <div class="bodyDaken"></div>
     <div class="container">
         <div class="topBar">
-            <button class="newBookBtn">New Book</button>
+            <div class="bookAddingForm">
+                <form action="" class="formBk">
+                    <label for="title">Title of Book:</label><input type="text" class="title" id="title">
+                    <label for="author">Author:</label><input type="text" class="author" id="author">
+                    <label for="pages">Number of Pages:</label><input type="number" name="pages" id="pages" class="pages">
+                    <label for="status">Have you read it?</label><input type="radio" name="status" id="status">
+                    <button class="newBookBtn" id="newBookBtn">Add Book</button>
+                </form>
+            </div>
         </div>
-        <div class="bookContainer">
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
+        <div class="bookContainer" id="bookContainer">
             <div class="book"></div>
             <div class="book"></div>
         </div>

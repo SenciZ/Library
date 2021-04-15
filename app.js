@@ -7,7 +7,12 @@ function Book (title, author, pages, status){
     this.status = status
 }
 
+const addBookButton = document.getElementById("newBookBtn").addEventListener("click", addBookToLibrary);
+
 function addBookToLibrary(){
-    myLibrary.push()
+    const bookContainer = document.getElementById("bookContainer");    
+    const bookDiv = document.createElement("div");
+        bookDiv.classList.add("book");
+    bookContainer.appendChild(bookDiv);
 }
 
