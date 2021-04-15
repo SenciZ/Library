@@ -112,8 +112,14 @@ input:focus{
     background-color: rgb(241, 241, 241);
     margin: 10px 10px;
     width: 20rem;
-    height: 30rem;
     border-radius: 10px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
+.titleOfBook{
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
 
