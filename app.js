@@ -21,7 +21,6 @@ function addBookToLibrary(){
     titleOfBook.value = "";
     authorOfBook.value = "";
     pagesOfBook.value = "";
-    event.preventDefault();
     addBooksToPage();
 }
 
@@ -53,5 +52,9 @@ function addBooksToPage(){
         bookContainer.appendChild(bookDiv);
     }
     event.preventDefault();
+}
+
+function addOneBook(){
+    
 }
 
