@@ -21,14 +21,20 @@ function addBookToLibrary(){
     titleOfBook.value = "";
     authorOfBook.value = "";
     pagesOfBook.value = "";
+    event.preventDefault();
     addBooksToPage();
 }
 
 function addBooksToPage(){
+    if(bookContainer.firstChild){
+        while(bookContainer.firstChild){
+            bookContainer.removeChild(bookContainer.firstChild);
+        }
+    } 
     for (let i = 0; i < myLibrary.length; i++) {
         const bookContainer = document.getElementById("bookContainer");    
         const bookDiv = document.createElement("div");
-        const bookTitleInDiv = document.createElement("h1");
+        const bookTitleInDiv = document.createElement("h1");  
             bookTitleInDiv.classList.add("titleOfBook");
             bookTitleInDiv.textContent = myLibrary[i].title
             bookDiv.appendChild(bookTitleInDiv);
@@ -48,6 +54,4 @@ function addBooksToPage(){
     }
     event.preventDefault();
 }
-
-
 
