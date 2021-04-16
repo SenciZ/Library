@@ -33,6 +33,7 @@ function addBooksToPage(){
     for (let i = 0; i < myLibrary.length; i++) {
         const bookContainer = document.getElementById("bookContainer");    
         const bookDiv = document.createElement("div");
+        bookDiv.setAttribute("data-id", i);
         const bookTitleInDiv = document.createElement("h1");  
             bookTitleInDiv.classList.add("titleOfBook");
             bookTitleInDiv.textContent = myLibrary[i].title
@@ -54,7 +55,9 @@ function addBooksToPage(){
     event.preventDefault();
 }
 
-function addOneBook(){
-    
+function removeBook(){
+    if(bookDiv.attr("data-id") === myLibrary[i]){
+        
+    }
 }
 
