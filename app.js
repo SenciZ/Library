@@ -63,7 +63,7 @@ function addBooksToPage(){
 
 function removeBook(){
     if(bookDiv.attr("data-id") === myLibrary[i]){
-        
+     return:   
     }
 }
 
