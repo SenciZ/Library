@@ -3,6 +3,9 @@
 let myLibrary = [];
 
 
+
+
+
 // Object constructor that constructs each individual book object
 function Book(title, author, pages, status){
     this.title = title
@@ -30,9 +33,6 @@ function addBookToLibrary(){
     event.preventDefault();
 
 }
-
-
-
 
 
 //Looks at all the array objects and appends them to the DOM
@@ -64,21 +64,15 @@ function addBooksToPage(){
 
         const removeButton = document.createElement("button");
             removeButton.classList.add("removeBtn");    
-            removeButton.addEventListener("click", removeBook(bookDiv.id));
             removeButton.textContent = "Remove Book"
+            removeButton.addEventListener("click", function(){
+                myLibrary.splice(`${bookDiv.id}`, 1);
+                addBooksToPage();
+            });
             bookDiv.appendChild(removeButton);
     
         bookDiv.classList.add("book");
         bookContainer.appendChild(bookDiv);
-
     }
     event.preventDefault();
 }
-
-
-function removeBook(idOfDiv){
-    if(myLibrary.indexOf(`"${idOfDiv}"`) == idOfDiv){
-        alert("removed")
-    }
-}
-
