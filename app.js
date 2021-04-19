@@ -27,7 +27,13 @@ function addBookToLibrary(){
     authorOfBook.value = "";
     pagesOfBook.value = "";
     addBooksToPage();
+    event.preventDefault();
+
 }
+
+
+
+
 
 //Looks at all the array objects and appends them to the DOM
 function addBooksToPage(){
@@ -39,7 +45,8 @@ function addBooksToPage(){
     for (let i = 0; i < myLibrary.length; i++) {
         const bookContainer = document.getElementById("bookContainer");    
         const bookDiv = document.createElement("div");
-        bookDiv.setAttribute("data-id", i);
+        bookDiv.classList.add("book");
+        bookDiv.setAttribute("id", i);
         const bookTitleInDiv = document.createElement("h1");  
             bookTitleInDiv.classList.add("titleOfBook");
             bookTitleInDiv.textContent = myLibrary[i].title
@@ -54,16 +61,24 @@ function addBooksToPage(){
             bookPagesInDiv.classList.add("numberOfPages");    
             bookPagesInDiv.textContent = myLibrary[i].pages
             bookDiv.appendChild(bookPagesInDiv);
+
+        const removeButton = document.createElement("button");
+            removeButton.classList.add("removeBtn");    
+            removeButton.addEventListener("click", removeBook(bookDiv.id));
+            removeButton.textContent = "Remove Book"
+            bookDiv.appendChild(removeButton);
     
         bookDiv.classList.add("book");
         bookContainer.appendChild(bookDiv);
+
     }
     event.preventDefault();
 }
 
-function removeBook(){
-    if(bookDiv.attr("data-id") === myLibrary[i]){
-     return:   
+
+function removeBook(idOfDiv){
+    if(myLibrary.indexOf(`"${idOfDiv}"`) == idOfDiv){
+        alert("removed")
     }
 }
 
