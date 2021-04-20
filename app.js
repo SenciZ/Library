@@ -2,10 +2,6 @@
 // Stores book objects
 let myLibrary = [];
 
-
-
-
-
 // Object constructor that constructs each individual book object
 function Book(title, author, pages, status){
     this.title = title
@@ -22,7 +18,6 @@ let titleOfBook = document.querySelector(".title");
 let authorOfBook = document.querySelector(".author");
 let pagesOfBook = document.querySelector(".pages");
 
-
 // Gets called by the addBookButton and pushes an object to the myLibrary array using the Book constructor
 function addBookToLibrary(){
     myLibrary.push(new Book(titleOfBook.value, authorOfBook.value, pagesOfBook.value));
@@ -33,7 +28,6 @@ function addBookToLibrary(){
     event.preventDefault();
 
 }
-
 
 //Looks at all the array objects and appends them to the DOM
 function addBooksToPage(){
