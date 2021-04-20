@@ -26,7 +26,6 @@ function addBookToLibrary(){
     pagesOfBook.value = "";
     addBooksToPage();
     event.preventDefault();
-
 }
 
 //Looks at all the array objects and appends them to the DOM
@@ -41,6 +40,8 @@ function addBooksToPage(){
         const bookDiv = document.createElement("div");
         bookDiv.classList.add("book");
         bookDiv.setAttribute("id", i);
+                bookContainer.appendChild(bookDiv);
+
         const bookTitleInDiv = document.createElement("h1");  
             bookTitleInDiv.classList.add("titleOfBook");
             bookTitleInDiv.textContent = myLibrary[i].title
@@ -59,14 +60,7 @@ function addBooksToPage(){
         const removeButton = document.createElement("button");
             removeButton.classList.add("removeBtn");    
             removeButton.textContent = "Remove Book"
-            removeButton.addEventListener("click", function(){
-                myLibrary.splice(`${bookDiv.id}`, 1);
-                addBooksToPage();
-            });
+            removeButton.addEventListener("click", ()=>{myLibrary.splice(`${bookDiv.id}`, 1); addBooksToPage();});
             bookDiv.appendChild(removeButton);
-    
-        bookDiv.classList.add("book");
-        bookContainer.appendChild(bookDiv);
     }
-    event.preventDefault();
 }
