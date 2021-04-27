@@ -10,6 +10,10 @@ function Book(title, author, pages, status){
     this.status = status
 }
 
+Book.prototype.status = function(){
+    console.log("read")
+}
+
 // Button that is used to add books to the myLibrary array
 const addBookButton = document.getElementById("newBookBtn");
 addBookButton.addEventListener("click", addBookToLibrary);
@@ -17,13 +21,16 @@ addBookButton.addEventListener("click", addBookToLibrary);
 let titleOfBook = document.querySelector(".title");
 let authorOfBook = document.querySelector(".author");
 let pagesOfBook = document.querySelector(".pages");
+let statusOfBook = document.querySelector(".status");
+
 
 // Gets called by the addBookButton and pushes an object to the myLibrary array using the Book constructor
 function addBookToLibrary(){
-    myLibrary.push(new Book(titleOfBook.value, authorOfBook.value, pagesOfBook.value));
+    myLibrary.push(new Book(titleOfBook.value, authorOfBook.value, pagesOfBook.value, statusOfBook.checked));
     titleOfBook.value = "";
     authorOfBook.value = "";
     pagesOfBook.value = "";
+    statusOfBook.checked = false;
     addBooksToPage();
     event.preventDefault();
 }
@@ -56,6 +63,11 @@ function addBooksToPage(){
             bookPagesInDiv.classList.add("numberOfPages");    
             bookPagesInDiv.textContent = myLibrary[i].pages
             bookDiv.appendChild(bookPagesInDiv);
+
+        const readStatus = document.createElement("input", "checkbox")
+            readStatus.setAttribute("type", "checkbox")
+            readStatus.checked = myLibrary[i].status;
+            bookDiv.appendChild(readStatus);
 
         const removeButton = document.createElement("button");
             removeButton.classList.add("removeBtn");    
