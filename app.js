@@ -83,5 +83,4 @@ function addBooksToPage(){
             removeButton.addEventListener("click", ()=>{myLibrary.splice(`${bookDiv.id}`, 1); addBooksToPage();});
             bookDiv.appendChild(removeButton);
     }
-
 }
