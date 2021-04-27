@@ -10,8 +10,12 @@ function Book(title, author, pages, status){
     this.status = status
 }
 
-Book.prototype.status = function(){
-    console.log("read")
+Book.prototype.statusChange = function(id){
+        if(myLibrary[id].status === false){
+            myLibrary[id].status = true;
+        } else if(myLibrary[id].status === true){
+            myLibrary[id].status = false;
+        }
 }
 
 // Button that is used to add books to the myLibrary array
@@ -51,28 +55,33 @@ function addBooksToPage(){
 
         const bookTitleInDiv = document.createElement("h1");  
             bookTitleInDiv.classList.add("titleOfBook");
-            bookTitleInDiv.textContent = myLibrary[i].title
+            bookTitleInDiv.textContent = myLibrary[i].title;
             bookDiv.appendChild(bookTitleInDiv);
     
-        const bookAuthorInDiv = document.createElement("h2")
+        const bookAuthorInDiv = document.createElement("h2");
             bookAuthorInDiv.classList.add("authorOfBook");
-            bookAuthorInDiv.textContent = myLibrary[i].author
+            bookAuthorInDiv.textContent = myLibrary[i].author;
             bookDiv.appendChild(bookAuthorInDiv);
     
-        const bookPagesInDiv = document.createElement("h2")
+        const bookPagesInDiv = document.createElement("h2");
             bookPagesInDiv.classList.add("numberOfPages");    
-            bookPagesInDiv.textContent = myLibrary[i].pages
+            bookPagesInDiv.textContent = myLibrary[i].pages;
             bookDiv.appendChild(bookPagesInDiv);
 
-        const readStatus = document.createElement("input", "checkbox")
-            readStatus.setAttribute("type", "checkbox")
+        const readStatus = document.createElement("input", "checkbox");
+            readStatus.setAttribute("type", "checkbox");
+            readStatus.setAttribute("id", i);
             readStatus.checked = myLibrary[i].status;
+            readStatus.addEventListener("change", () => {
+                myLibrary[i].statusChange(i);
+            })
             bookDiv.appendChild(readStatus);
 
         const removeButton = document.createElement("button");
             removeButton.classList.add("removeBtn");    
-            removeButton.textContent = "Remove Book"
+            removeButton.textContent = "Remove Book";
             removeButton.addEventListener("click", ()=>{myLibrary.splice(`${bookDiv.id}`, 1); addBooksToPage();});
             bookDiv.appendChild(removeButton);
     }
+
 }
