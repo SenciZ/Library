@@ -1,21 +1,38 @@
 // Stores book objects
 let myLibrary = [];
 
-// Object constructor that constructs each individual book object
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+//Class that constructs each individual book object
+class Book{
+  constructor(title, author, pages, status){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+  statusChange(id){
+    if (myLibrary[id].status === false) {
+      myLibrary[id].status = true;
+    } else if (myLibrary[id].status === true) {
+      myLibrary[id].status = false;
+    }
+  }
 }
 
-Book.prototype.statusChange = function (id) {
-  if (myLibrary[id].status === false) {
-    myLibrary[id].status = true;
-  } else if (myLibrary[id].status === true) {
-    myLibrary[id].status = false;
-  }
-};
+// // Object constructor that constructs each individual book object
+// function Book(title, author, pages, status) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.status = status;
+// }
+
+// Book.prototype.statusChange = function (id) {
+//   if (myLibrary[id].status === false) {
+//     myLibrary[id].status = true;
+//   } else if (myLibrary[id].status === true) {
+//     myLibrary[id].status = false;
+//   }
+// };
 
 // Button that is used to add books to the myLibrary array
 const addBookButton = document.getElementById("newBookBtn");
